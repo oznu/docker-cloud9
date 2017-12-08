@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+echo "Starting ssh server..."
+exec /usr/sbin/sshd -D -e
