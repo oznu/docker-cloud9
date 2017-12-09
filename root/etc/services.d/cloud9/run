@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+echo "Starting cloud9 server..."
+exec node /app/server.js --collab --listen 0.0.0.0 -w /workspace

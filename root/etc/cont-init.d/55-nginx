@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv sh
+
+[ -e /config/.htpasswd ] || touch /config/.htpasswd
+
+chown -R abc:abc /config

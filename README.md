@@ -1,22 +1,23 @@
 ### Work in progress
 
-# Docker AWS Cloud9 Client
+# Docker Cloud9 Server
 
-This image acts as a server which your AWS Cloud9 workspace can connect to.
+This image runs the Cloud9 IDE inside a Docker container. Supports multiple users and collaboration.
 
 ## Usage
 
 ```
 docker run \
   -v </path/to/config/>:/config \
-  -v </path/to/home/>:/home \
-  -p 22:22 \
+  -v </path/to/home/>:/workspace \
+  -p 80:80 \
   oznu/cloud9
 ```
 
-* The user account name is `cloud9`.
-* Save the Cloud9 public key to the file`/config//authorized_keys/cloud9`
+## Managing Users
 
-## Limitations
+Users are managed through a standard `.htpasswd` file located in `/config/.htpasswd`. To add a new a user run this command after launching the container:
 
-* The Cloud9 Docker services do not work. You will get an error about this in Cloud9, just click `Previous` then uncheck the Docker service to make it go away.
+```
+docker exec -it <container name or id> htpasswd /config/.htpasswd <username>
+```

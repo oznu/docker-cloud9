@@ -1,6 +1,0 @@
-#!/usr/bin/with-contenv sh
-
-# copy .c9 into cloud9 home
-mkdir -p /home/cloud9
-[ -e /home/cloud9/.c9 ] || cp -R /app/.c9 /home/cloud9/.c9
-chown -R cloud9:cloud9 /home/cloud9
