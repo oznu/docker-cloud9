@@ -11,6 +11,7 @@ docker run \
   -v </path/to/config/>:/config \
   -v </path/to/home/>:/workspace \
   -p 80:80 \
+  -p 8000-8003:9000-9003 \
   oznu/cloud9
 ```
 
